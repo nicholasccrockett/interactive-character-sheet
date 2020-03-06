@@ -7,6 +7,7 @@ class App extends React.Component {
     super(props);
     this.data = require("./Characters.json");
     this.selected = this.data.Characters[0];
+    //set state value based off of incoming character. Assumes the use of the first character.
     this.state = {
       sel:0,
       profMod : this.calcProf(this.selected.pcLevel, this.selected.scLevel),
@@ -31,6 +32,7 @@ class App extends React.Component {
     console.log(this.selected);
   }
 
+  //calculates overall level and return the correct proficiency modifier.
   calcProf(prim, sec){
     let tot = prim + sec;
     if(tot<5)
@@ -43,6 +45,8 @@ class App extends React.Component {
       return(+5);
     else return(+6);
   }
+
+  // displays the class info. Only displays one class if there is only only class.(App only supports 2 classes currently.
   classes () {
     if (this.selected.scLevel != 0) {
       return (
@@ -60,6 +64,7 @@ class App extends React.Component {
     }
   }
 
+  // getMod method retrieves the value for which a modifier would be given a certain statistic.
   getMod(score){
     if(score<2)
       return(-5);
@@ -94,13 +99,14 @@ class App extends React.Component {
     else return(10);
   }
 
+  //adds + to a non-negative number for the purpose of displaying that it is a modifier.
   modStr(num){
     if(num>-1) return ("+" + num);
     else return(num);
   }
 
+  // stats method is used to organize and render the left-side stats and skills box information.
   stats(){
-    console.log("state:", this.state);
     return(
       <div className="stats">
         <div className="statBlock1">
@@ -213,7 +219,7 @@ class App extends React.Component {
     }
     return hd;
   }
-
+  // status area is for health and defense stats
   status(){
     return(
       <div className="statusBox">
