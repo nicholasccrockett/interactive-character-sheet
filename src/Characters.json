@@ -1,0 +1,82 @@
+{
+  "Characters" : [
+    {
+      "playerName": "Nicholas Crockett",
+      "charName": "Cairne Bloodhoof",
+      "class": "Cleric",
+      "sClass": "",
+      "pcLevel": 3,
+      "scLevel": 0,
+      "background": "Outlander",
+      "race": "Minotaur",
+      "alignment": "Lawful Neutral",
+      "experiencePoints": 900,
+      "inspiration": 0,
+      "baseStats": {
+          "STR": 15,
+          "DEX": 12,
+          "CON": 13,
+          "INT": 7,
+          "WIS": 18,
+          "CHA": 12
+        },
+      "baseStatModifiers": {
+          "STR": 2,
+          "DEX": 0,
+          "CON": 1,
+          "INT": 0,
+          "WIS": 0,
+          "CHA": 0
+      },
+      "proficiencies": {
+        "STR": 0,
+        "DEX":0,
+        "CON": 0,
+        "INT": 0,
+        "WIS": 0,
+        "CHA": 0
+      },
+      "skills": {
+        "athletics": 0,
+        "acrobatics": 0,
+        "sleight": 0,
+        "stealth": 0,
+        "arcana": 0,
+        "history": 0,
+        "investigation": 0,
+        "nature": 0,
+        "religion": 0,
+        "animalHandling": 0,
+        "insight": 0,
+        "medicine": 0,
+        "perception": 0,
+        "survival": 0,
+        "deception": 0,
+        "intimidation":0,
+        "performance":0,
+        "persuasion": 0
+      },
+      "biography": {
+        "personalityTraits": "",
+        "ideals": "",
+        "bonds": "",
+        "flaws": ""
+      },
+      "speed": "30ft",
+      "HPMax": 26,
+      "currentHP": 26,
+      "tempHP": 0,
+      "hitDice": [
+        {
+          "dice": "d8",
+          "total": 3,
+          "used": 0
+        }
+      ],
+      "saves": {
+        "successes": 0,
+        "fails": 0
+      }
+    }
+  ]
+}

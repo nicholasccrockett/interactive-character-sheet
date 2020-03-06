@@ -1,38 +1,156 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Meta {
+  display: flex;
+  align-content: space-around;
+  background-color: grey;
+}
+.charName {
+  width: 40vw;
+}
+.otherMeta {
+  display:flex;
+  align-content: space-between;
+  padding:2vw;
+  flex-wrap: wrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page1 {
+  display:flex;
+  justify-content: space-around;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.col1 {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+
+.col2 {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+.statusHead {
+  display: flex;
+  justify-content: space-around;
+}
+
+.armorClass {
+  border-style: solid;
+  border-width: .1vw;
+  background-color: white;
+  width: 9vw;
+}
+
+.statusBox {
+  border-style: solid;
+  border-color: #EEEEEE;
+  padding: 5px;
+  background-color: lightgrey;
+}
+
+.statBox {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: white;
+  width: 9vw;
+}
+
+.statBoxWide {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: white;
+}
+.statFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.statBoxHalfWide {
+  display:flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: white;
+  width:14vw;
+  justify-self: start;
+}
+.col3 {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}
+
+.stats {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #EEEEEE;
+  width: 32vw;
 }
 
-.App-link {
-  color: #61dafb;
+.statBlock1 {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 25vw;
+  border-style: dotted;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.statBlock2 {
+  display:flex;
+  width: 30vw;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vw;
+  border-top-style: groove;
+}
+
+.statNums {
+  background: white;
+  border-style: ridge;
+  width:8vw;
+  display:flex;
+  flex-direction: column;
+}
+.skillNums {
+  display:flex;
+  flex-direction: column;
+  align-self: start;
+  align-items: flex-start;
+  width: 20vw;
+}
+.statusHead {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  font-size: 11px;
+}
+
+h4 {
+  font-size: 10px;
+  color: #DDDDDD;
+}
+
+p3 {
+  font-size: 10px;
+}
+p2 {
+  font-size: 12px;
+}
+p1 {
+  font-size: 15px;
 }
