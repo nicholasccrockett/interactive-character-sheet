@@ -2,7 +2,22 @@
   "Races": {},
   "Classes": {},
   "Backgrounds": {},
-  "Equipment": {},
+  "Equipment": {
+    "armor": {
+      "Padded":{"category": "Light", "cost": 5, "class": 11, "maxMod": 0, "strReq": "0", "stealth": "Disadvantage", "weight": "8 lb."},
+      "Leather":{"category": "Light", "cost": 10, "class": 11, "maxMod": 0, "strReq": "0", "stealth": "", "weight": "10 lb."},
+      "StuddedLeather":{"category": "Light", "cost": 45, "class": 12, "maxMod": 0, "strReq": "0", "stealth": "", "weight": "13 lb."},
+      "Hide":{"category": "Medium", "cost": 10, "class": 12, "maxMod": 0, "strReq": "0", "stealth": "", "weight": "12 lb."},
+      "Chain shirt":{"category": "Medium", "cost": 50, "class": 13, "maxMod": 2, "strReq": "0", "stealth": "", "weight": "12 lb."},
+      "Hide":{"category": "Medium", "cost": 10, "class": 11, "maxMod": 0, "strReq": "0", "stealth": "", "weight": "12 lb."}
+    },
+    "weapons": {
+
+    },
+    "others": {
+
+    }
+  },
   "Feats": {},
   "Actions": {},
   "Conditions": {},

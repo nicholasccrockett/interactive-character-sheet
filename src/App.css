@@ -136,6 +136,11 @@
   justify-content: space-between;
 }
 
+.otherProficiencies {
+  width:100%;
+  border-style: solid;
+}
+
 h3 {
   font-size: 11px;
 }

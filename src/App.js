@@ -27,7 +27,9 @@ class App extends React.Component {
       HPMax : this.selected.HPMax,
       currentHP : this.selected.currentHP,
       tempHP : this.selected.tempHP,
-      hitDice : this.selected.hitDice
+      hitDice : this.selected.hitDice,
+      proficiencies : this.selected.otherProficiencies,
+      languages : this.selected.languages
     };
     console.log(this.selected);
   }
@@ -288,6 +290,11 @@ class App extends React.Component {
         <div className="page1">
           <div className="col1">
             {this.stats()}
+            <div className="otherProficiencies">
+              {this.state.proficiencies}
+              {this.state.languages}
+              <h3>OTHER PROFICIENCIES & LANGUAGES</h3>
+            </div>
           </div>
           <div className="col2">
             {this.status()}
