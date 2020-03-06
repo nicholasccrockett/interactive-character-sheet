@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e779df84-0b3c-4024-ac48-43a4b2a051d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ultor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Characters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Spellcasting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Characters.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Characters.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +65,7 @@
       <workItem from="1583350986707" duration="629000" />
       <workItem from="1583430557127" duration="42000" />
       <workItem from="1583430614453" duration="16559000" />
-      <workItem from="1583503397709" duration="3590000" />
+      <workItem from="1583503397709" duration="5377000" />
     </task>
     <servers />
   </component>
@@ -116,9 +109,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="136" y="247" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1583447057201" />
-    <state x="143" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1583455879337">
+    <state x="143" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1583508324925">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="143" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1583455879337" />
+    <state x="143" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1583508324925" />
   </component>
 </project>
