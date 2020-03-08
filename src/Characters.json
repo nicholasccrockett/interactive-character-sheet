@@ -14,10 +14,9 @@
       "flaws": "",
       "race": "Minotaur",
       "alignment": "Lawful Neutral",
-      "otherProficiencies": "List",
+      "otherProficiencies": "None, ",
       "featuresAndTraits": "",
       "languages": "Common, Minotaur and Orcish",
-      "equipment": "",
       "experiencePoints": 900,
       "inspiration": 0,
       "baseStats": {
@@ -84,7 +83,31 @@
       "saves": {
         "successes": 0,
         "fails": 0
-      }
+      },
+      "equipment": [
+        {
+          "name": "Great Sword",
+          "type": "weapon",
+          "category": "martial",
+          "damageDie": "d6",
+          "damageDieNum": 1,
+          "damageType": "slashing"
+        },
+        {
+          "name": "Longsword",
+          "type": "weapon",
+          "category": "martial",
+          "damageDie": "d8",
+          "twoHandedDamageDie": "d12",
+          "damageDieNum": 1,
+          "damageType": "slashing"
+        },
+        {
+          "name": "rope",
+          "type": "utility",
+          "length": "50ft"
+        }
+      ]
     }
   ]
 }

@@ -4,12 +4,19 @@
   "Backgrounds": {},
   "Equipment": {
     "armor": {
-      "Padded":{"category": "Light", "cost": 5, "class": 11, "maxMod": 0, "strReq": "0", "stealth": "Disadvantage", "weight": "8 lb."},
-      "Leather":{"category": "Light", "cost": 10, "class": 11, "maxMod": 0, "strReq": "0", "stealth": "", "weight": "10 lb."},
-      "StuddedLeather":{"category": "Light", "cost": 45, "class": 12, "maxMod": 0, "strReq": "0", "stealth": "", "weight": "13 lb."},
-      "Hide":{"category": "Medium", "cost": 10, "class": 12, "maxMod": 0, "strReq": "0", "stealth": "", "weight": "12 lb."},
-      "Chain shirt":{"category": "Medium", "cost": 50, "class": 13, "maxMod": 2, "strReq": "0", "stealth": "", "weight": "12 lb."},
-      "Hide":{"category": "Medium", "cost": 10, "class": 11, "maxMod": 0, "strReq": "0", "stealth": "", "weight": "12 lb."}
+      "Padded": {"category": "Light", "cost": 5, "class": 11, "maxMod": -1, "strReq": "0", "stealth": "Disadvantage", "weight": 8},
+      "Leather": {"category": "Light", "cost": 10, "class": 11, "maxMod": -1, "strReq": "0", "stealth": "", "weight": 10},
+      "StuddedLeather": {"category": "Light", "cost": 45, "class": 12, "maxMod": -1, "strReq": "0", "stealth": "", "weight": 13},
+      "Hide": {"category": "Medium", "cost": 10, "class": 12, "maxMod": 2, "strReq": "0", "stealth": "", "weight": 12},
+      "ChainShirt": {"category": "Medium", "cost": 50, "class": 13, "maxMod": 2, "strReq": "0", "stealth": "", "weight": 20},
+      "ScaleMail": {"category": "Medium", "cost": 50, "class": 14, "maxMod": 2, "strReq": "0", "stealth": "Disadvantage", "weight": 45},
+      "Breastplate": {"category": "Medium", "cost": 400, "class": 14, "maxMod": 2, "strReq": "0", "stealth": "", "weight": 20},
+      "HalfPlate": {"category": "Medium", "cost": 50, "class": 14, "maxMod": 2, "strReq": "0", "stealth": "", "weight": 45},
+      "RingMail": {"category":  "Heavy","cost": 30, "class": 14, "maxMod": 0, "strReq": 0, "stealth": "Disadvantage", "weight": 40},
+      "ChainMail": {"category":  "Heavy","cost": 75, "class": 16, "maxMod": 0, "strReq": 13, "stealth": "Disadvantage", "weight": 55},
+      "Splint": {"category":  "Heavy","cost": 200, "class": 17, "maxMod": 0, "strReq": 15, "stealth": "Disadvantage", "weight": 60},
+      "Plate": {"category":  "Heavy","cost": 1500, "class": 18, "maxMod": 0, "strReq": 15, "stealth": "Disadvantage", "weight": 65},
+      "Shield": {"category": "Shield", "cost": 10, "class": 2, "weight": 6}
     },
     "weapons": {
 

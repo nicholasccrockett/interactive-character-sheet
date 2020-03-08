@@ -1,17 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './PH.json';
+import WeaponsList from './components/WeaponsList.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.handbook = require("./PH.json");
     this.data = require("./Characters.json");
     this.selected = this.data.Characters[0];
     //set state value based off of incoming character. Assumes the use of the first character.
     this.state = {
       sel:0,
+      character : this.selected,
       profMod : this.calcProf(this.selected.pcLevel, this.selected.scLevel),
-      inspiration : this.selected.inspiration,
       str: this.selected.baseStats.STR + this.selected.baseStatModifiers.STR,
       dex : this.selected.baseStats.DEX + this.selected.baseStatModifiers.DEX,
       con : this.selected.baseStats.CON + this.selected.baseStatModifiers.CON,
@@ -24,14 +26,23 @@ class App extends React.Component {
       intMod : this.getMod(this.selected.baseStats.INT + this.selected.baseStatModifiers.INT),
       wisMod : this.getMod(this.selected.baseStats.WIS + this.selected.baseStatModifiers.WIS),
       chaMod : this.getMod(this.selected.baseStats.CHA + this.selected.baseStatModifiers.CHA),
-      HPMax : this.selected.HPMax,
-      currentHP : this.selected.currentHP,
-      tempHP : this.selected.tempHP,
-      hitDice : this.selected.hitDice,
-      proficiencies : this.selected.otherProficiencies,
-      languages : this.selected.languages
+      stats : {
+        profMod : this.calcProf(this.selected.pcLevel, this.selected.scLevel),
+        str: this.selected.baseStats.STR + this.selected.baseStatModifiers.STR,
+        dex : this.selected.baseStats.DEX + this.selected.baseStatModifiers.DEX,
+        con : this.selected.baseStats.CON + this.selected.baseStatModifiers.CON,
+        wis : this.selected.baseStats.WIS + this.selected.baseStatModifiers.WIS,
+        int : this.selected.baseStats.INT + this.selected.baseStatModifiers.INT,
+        cha : this.selected.baseStats.CHA + this.selected.baseStatModifiers.CHA,
+        strMod : this.getMod(this.selected.baseStats.STR + this.selected.baseStatModifiers.STR),
+        dexMod : this.getMod(this.selected.baseStats.DEX + this.selected.baseStatModifiers.DEX),
+        conMod : this.getMod(this.selected.baseStats.CON + this.selected.baseStatModifiers.CON),
+        intMod : this.getMod(this.selected.baseStats.INT + this.selected.baseStatModifiers.INT),
+        wisMod : this.getMod(this.selected.baseStats.WIS + this.selected.baseStatModifiers.WIS),
+        chaMod : this.getMod(this.selected.baseStats.CHA + this.selected.baseStatModifiers.CHA),
+      }
     };
-    console.log(this.selected);
+    console.log(this.state.character);
   }
 
   //calculates overall level and return the correct proficiency modifier.
@@ -50,17 +61,17 @@ class App extends React.Component {
 
   // displays the class info. Only displays one class if there is only only class.(App only supports 2 classes currently.
   classes () {
-    if (this.selected.scLevel != 0) {
+    if (this.state.character.scLevel !== 0) {
       return (
         <div>
-          <h3>{this.selected.class} {this.selected.pcLevel}</h3>
-          <h3>{this.selected.sClass} {this.selected.scLevel}</h3>
+          <h3>{this.state.character.class} {this.state.character.pcLevel}</h3>
+          <h3>{this.state.character.sClass} {this.state.character.scLevel}</h3>
         </div>
       )
     } else {
       return (
         <div>
-          <h3>{this.selected.class} {this.selected.pcLevel}</h3>
+          <h3>{this.state.character.class} {this.state.character.pcLevel}</h3>
         </div>
       )
     }
@@ -116,7 +127,7 @@ class App extends React.Component {
           <h3>PROFICIENCY BONUS</h3>
         </div>
         <div className="statBlock1">
-          <p1>{this.state.inspiration}</p1>
+          <p1>{this.state.character.inspiration}</p1>
           <h3>INSPIRATION</h3>
         </div>
         <div className="statBlock2">
@@ -126,8 +137,8 @@ class App extends React.Component {
             <p1 className="modifier">{this.modStr(this.state.strMod)}</p1>
           </div>
           <div className="skillNums">
-            <p3>{this.modStr(this.state.strMod + (this.selected.proficiencies.STR * this.state.profMod))} SAVING THROWS</p3>
-            <p3>{this.modStr(this.state.strMod + (this.selected.skills.athletics * this.state.profMod))} ATHLETICS</p3>
+            <p3>{this.modStr(this.state.strMod + (this.state.character.proficiencies.STR * this.state.profMod))} SAVING THROWS</p3>
+            <p3>{this.modStr(this.state.strMod + (this.state.character.skills.athletics * this.state.profMod))} ATHLETICS</p3>
           </div>
         </div>
         <div className="statBlock2">
@@ -137,10 +148,10 @@ class App extends React.Component {
             <p1 className="modifier">{this.modStr(this.state.dexMod)}</p1>
           </div>
           <div className="skillNums">
-            <p3>{this.modStr(this.state.dexMod + (this.selected.proficiencies.DEX * this.state.profMod))} SAVING THROWS</p3>
-            <p3>{this.modStr(this.state.dexMod + (this.selected.skills.acrobatics * this.state.profMod))} ACROBATICS</p3>
-            <p3>{this.modStr(this.state.dexMod + (this.selected.skills.sleight * this.state.profMod))} SLEIGHT OF HAND</p3>
-            <p3>{this.modStr(this.state.dexMod + (this.selected.skills.stealth * this.state.profMod))} STEALTH</p3>
+            <p3>{this.modStr(this.state.dexMod + (this.state.character.proficiencies.DEX * this.state.profMod))} SAVING THROWS</p3>
+            <p3>{this.modStr(this.state.dexMod + (this.state.character.skills.acrobatics * this.state.profMod))} ACROBATICS</p3>
+            <p3>{this.modStr(this.state.dexMod + (this.state.character.skills.sleight * this.state.profMod))} SLEIGHT OF HAND</p3>
+            <p3>{this.modStr(this.state.dexMod + (this.state.character.skills.stealth * this.state.profMod))} STEALTH</p3>
           </div>
         </div>
         <div className="statBlock2">
@@ -150,7 +161,7 @@ class App extends React.Component {
             <p1 className="modifier">{this.modStr(this.state.conMod)}</p1>
           </div>
           <div className="skillNums">
-            <p3>{this.modStr(this.state.conMod + (this.selected.proficiencies.CON * this.state.profMod))} SAVING THROWS</p3>
+            <p3>{this.modStr(this.state.conMod + (this.state.character.proficiencies.CON * this.state.profMod))} SAVING THROWS</p3>
           </div>
         </div>
         <div className="statBlock2">
@@ -160,12 +171,12 @@ class App extends React.Component {
             <p1 className="modifier">{this.modStr(this.state.intMod)}</p1>
           </div>
           <div className="skillNums">
-            <p3>{this.modStr(this.state.intMod + (this.selected.proficiencies.INT * this.state.profMod))} SAVING THROWS</p3>
-            <p3>{this.modStr(this.state.intMod + (this.selected.skills.arcana * this.state.profMod))} ARCANA</p3>
-            <p3>{this.modStr(this.state.intMod + (this.selected.skills.history * this.state.profMod))} HISTORY</p3>
-            <p3>{this.modStr(this.state.intMod + (this.selected.skills.investigation * this.state.profMod))} INVESTIGATION</p3>
-            <p3>{this.modStr(this.state.intMod + (this.selected.skills.nature * this.state.profMod))} NATURE</p3>
-            <p3>{this.modStr(this.state.intMod + (this.selected.skills.religion * this.state.profMod))} RELIGION</p3>
+            <p3>{this.modStr(this.state.intMod + (this.state.character.proficiencies.INT * this.state.profMod))} SAVING THROWS</p3>
+            <p3>{this.modStr(this.state.intMod + (this.state.character.skills.arcana * this.state.profMod))} ARCANA</p3>
+            <p3>{this.modStr(this.state.intMod + (this.state.character.skills.history * this.state.profMod))} HISTORY</p3>
+            <p3>{this.modStr(this.state.intMod + (this.state.character.skills.investigation * this.state.profMod))} INVESTIGATION</p3>
+            <p3>{this.modStr(this.state.intMod + (this.state.character.skills.nature * this.state.profMod))} NATURE</p3>
+            <p3>{this.modStr(this.state.intMod + (this.state.character.skills.religion * this.state.profMod))} RELIGION</p3>
           </div>
         </div>
         <div className="statBlock2">
@@ -175,11 +186,11 @@ class App extends React.Component {
             <p1 className="modifier">{this.modStr(this.state.wisMod)}</p1>
           </div>
           <div className="skillNums">
-            <p3>{this.modStr(this.state.wisMod + (this.selected.proficiencies.WIS * this.state.profMod))} SAVING THROWS</p3>
-            <p3>{this.modStr(this.state.wisMod + (this.selected.skills.animalHandling * this.state.profMod))} ANIMAL HANDLING</p3>
-            <p3>{this.modStr(this.state.wisMod + (this.selected.skills.insight * this.state.profMod))} MEDICINE</p3>
-            <p3>{this.modStr(this.state.wisMod + (this.selected.skills.perception * this.state.profMod))} PERCEPTION</p3>
-            <p3>{this.modStr(this.state.wisMod + (this.selected.skills.survival * this.state.profMod))} SURVIVAL</p3>
+            <p3>{this.modStr(this.state.wisMod + (this.state.character.proficiencies.WIS * this.state.profMod))} SAVING THROWS</p3>
+            <p3>{this.modStr(this.state.wisMod + (this.state.character.skills.animalHandling * this.state.profMod))} ANIMAL HANDLING</p3>
+            <p3>{this.modStr(this.state.wisMod + (this.state.character.skills.insight * this.state.profMod))} MEDICINE</p3>
+            <p3>{this.modStr(this.state.wisMod + (this.state.character.skills.perception * this.state.profMod))} PERCEPTION</p3>
+            <p3>{this.modStr(this.state.wisMod + (this.state.character.skills.survival * this.state.profMod))} SURVIVAL</p3>
           </div>
         </div>
         <div className="statBlock2">
@@ -189,11 +200,11 @@ class App extends React.Component {
             <p1 className="modifier">{this.modStr(this.state.chaMod)}</p1>
           </div>
           <div className="skillNums">
-            <p3>{this.modStr(this.state.chaMod + (this.selected.proficiencies.CHA * this.state.profMod))} SAVING THROWS</p3>
-            <p3>{this.modStr(this.state.chaMod + (this.selected.skills.deception * this.state.profMod))} DECEPTION</p3>
-            <p3>{this.modStr(this.state.chaMod + (this.selected.skills.intimidation * this.state.profMod))} INTIMIDATION</p3>
-            <p3>{this.modStr(this.state.chaMod + (this.selected.skills.performance * this.state.profMod))} PERFORMANCE</p3>
-            <p3>{this.modStr(this.state.chaMod + (this.selected.skills.persuasion * this.state.profMod))} PERSUASION</p3>
+            <p3>{this.modStr(this.state.chaMod + (this.state.character.proficiencies.CHA * this.state.profMod))} SAVING THROWS</p3>
+            <p3>{this.modStr(this.state.chaMod + (this.state.character.skills.deception * this.state.profMod))} DECEPTION</p3>
+            <p3>{this.modStr(this.state.chaMod + (this.state.character.skills.intimidation * this.state.profMod))} INTIMIDATION</p3>
+            <p3>{this.modStr(this.state.chaMod + (this.state.character.skills.performance * this.state.profMod))} PERFORMANCE</p3>
+            <p3>{this.modStr(this.state.chaMod + (this.state.character.skills.persuasion * this.state.profMod))} PERSUASION</p3>
           </div>
         </div>
         <div className="statBlock1">
@@ -206,18 +217,18 @@ class App extends React.Component {
 
   totalHitDie(){
     let hd = "";
-    for(let i = 0; i<this.state.hitDice.length; i++){
-      hd += this.state.hitDice[i].total + this.state.hitDice[i].dice;
+    for(let i = 0; i<this.state.character.hitDice.length; i++){
+      hd += this.state.character.hitDice[i].total + this.state.character.hitDice[i].dice;
     }
     return hd;
   }
 
   hitDieCalc(){
     let hd = "";
-    for(let i = 0; i<this.state.hitDice.length; i++){
-      let k = this.state.hitDice[i].total; //- this.state.hitDice[i].used;
-      k -=this.state.hitDice[i].used;
-      hd+=k + this.state.hitDice[i].dice;
+    for(let i = 0; i<this.state.character.hitDice.length; i++){
+      let k = this.state.character.hitDice[i].total; //- this.state.character.hitDice[i].used;
+      k -=this.state.character.hitDice[i].used;
+      hd+=k + this.state.character.hitDice[i].dice;
     }
     return hd;
   }
@@ -235,17 +246,17 @@ class App extends React.Component {
             <h3>INITIATIVE</h3>
           </div>
           <div className="statBox">
-            <p1>{this.selected.speed}</p1>
+            <p1>{this.state.character.speed}</p1>
             <h3>SPEED</h3>
           </div>
         </div>
         <div className="statBoxWide">
-          <h4>HIT POINT MAXIMUM {this.state.HPMax}</h4>
-          <p1>{this.state.currentHP}</p1>
+          <h4>HIT POINT MAXIMUM {this.state.character.HPMax}</h4>
+          <p1>{this.state.character.currentHP}</p1>
           <h3>CURRENT HIT POINTS</h3>
         </div>
         <div className="statBoxWide">
-          <p1>{this.state.tempHP}</p1>
+          <p1>{this.state.character.tempHP}</p1>
           <h3>TEMPORARY HIT POINTS</h3>
         </div>
         <div className="statFooter">
@@ -264,6 +275,23 @@ class App extends React.Component {
     )
   }
 
+  weaponItem(props){
+    const val = props.val;
+    return <li>{props.val}</li>
+  }
+
+  weaponList(eqArr){;
+    const listItem = eqArr.map((eqArr) =>
+      {this.weaponItem(eqArr.toString(), eqArr)}
+    );
+
+    return (
+      <ul>
+        {listItem}
+      </ul>
+    );
+  }
+
   calcSaves(){
 
   }
@@ -276,28 +304,32 @@ class App extends React.Component {
         </div>
         <div className="Meta">
           <div className="charName">
-            <h1>{this.selected.charName}</h1>
+            <h1>{this.state.character.charName}</h1>
           </div>
           <div className="otherMeta">
             {this.classes()}
-            <h3>{this.selected.background}</h3>
-            <h3>{this.selected.playerName}</h3>
-            <h3>{this.selected.race}</h3>
-            <h3>{this.selected.alignment}</h3>
-            <h3>{this.selected.experiencePoints}</h3>
+            <h3>{this.state.character.background}</h3>
+            <h3>{this.state.character.playerName}</h3>
+            <h3>{this.state.character.race}</h3>
+            <h3>{this.state.character.alignment}</h3>
+            <h3>{this.state.character.experiencePoints}</h3>
           </div>
         </div>
         <div className="page1">
           <div className="col1">
             {this.stats()}
             <div className="otherProficiencies">
-              {this.state.proficiencies}
-              {this.state.languages}
+              {this.state.character.otherProficiencies}
+              {this.state.character.languages}
               <h3>OTHER PROFICIENCIES & LANGUAGES</h3>
             </div>
           </div>
           <div className="col2">
             {this.status()}
+            <div className="AttackAndSpellcasting">
+              <div className="boxHeader"><h4>NAME</h4><h4>ATK BONUS</h4><h4>DAMAGE/TYPE</h4></div>
+              <WeaponsList equipment={this.state.character.equipment} stats={this.state.stats} modStr={this.modStr}/>
+            </div>
           </div>
           <div className="col3">
 

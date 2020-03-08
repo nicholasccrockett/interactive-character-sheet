@@ -150,6 +150,16 @@ h4 {
   color: #DDDDDD;
 }
 
+.AttackAndSpellcasting {
+border-style: solid;
+}
+
+.boxHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 p3 {
   font-size: 10px;
 }
