@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import './PH.json';
 import WeaponsList from './components/WeaponsList.js';
+import StatNSkillBox from "./components/StatNSkillBox";
 
 class App extends React.Component {
   constructor(props) {
@@ -318,6 +319,7 @@ class App extends React.Component {
         <div className="page1">
           <div className="col1">
             {this.stats()}
+            <StatNSkillBox stats={this.state.stats} profs={this.state.character.proficiencies}/>
             <div className="otherProficiencies">
               {this.state.character.otherProficiencies}
               {this.state.character.languages}
