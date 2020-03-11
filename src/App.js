@@ -3,6 +3,8 @@ import './App.css';
 import './PH.json';
 import WeaponsList from './components/WeaponsList.js';
 import StatNSkillBox from "./components/StatNSkillBox";
+import FeaturesBox from "./components/FeaturesBox";
+import EquipmentInventory from "./components/EquipmentInventory";
 
 class App extends React.Component {
   constructor(props) {
@@ -317,7 +319,7 @@ class App extends React.Component {
           </div>
         </div>
         <div className="page1">
-          <div className="col1">
+          <div className="col.">
             {this.stats()}
             <StatNSkillBox stats={this.state.stats} profs={this.state.character.proficiencies}/>
             <div className="otherProficiencies">
@@ -326,15 +328,22 @@ class App extends React.Component {
               <h3>OTHER PROFICIENCIES & LANGUAGES</h3>
             </div>
           </div>
-          <div className="col2">
+          <div className="col">
             {this.status()}
             <div className="AttackAndSpellcasting">
               <div className="boxHeader"><h4>NAME</h4><h4>ATK BONUS</h4><h4>DAMAGE/TYPE</h4></div>
               <WeaponsList equipment={this.state.character.equipment} stats={this.state.stats} modStr={this.modStr}/>
             </div>
+            <EquipmentInventory eq={this.state.character.equipment}/>
           </div>
-          <div className="col3">
-
+          <div className="col">
+            <div className="bioBox">
+              <p>{this.state.character.personalityTraits}</p>
+              <p>{this.state.character.ideals}</p>
+              <p>{this.state.character.bonds}</p>
+              <p>{this.state.character.flaws}</p>
+            </div>
+            <FeaturesBox Features={this.state.character.featuresAndTraits}/>
           </div>
         </div>
       </div>

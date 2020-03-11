@@ -25,17 +25,12 @@
   justify-content: space-around;
 }
 
-.col1 {
+.col {
   display: flex;
   flex-direction: column;
   width: 30vw;
 }
 
-.col2 {
-  display: flex;
-  flex-direction: column;
-  width: 30vw;
-}
 .statusHead {
   display: flex;
   justify-content: space-around;
@@ -150,6 +145,13 @@ h4 {
   color: #DDDDDD;
 }
 
+.col3 {
+  display:flex;
+  flex-direction: column;
+  width: 30vw;
+  background: #EEEEEE;
+}
+
 .AttackAndSpellcasting {
 border-style: solid;
 }
@@ -160,6 +162,20 @@ border-style: solid;
   justify-content: space-around;
 }
 
+.bioBox {
+  display: flex;
+  flex-direction: column;
+  background: #EEEEEE;
+  width: 30vw;
+}
+
+.bioBox p {
+  border-style: solid;
+  padding:1em;
+  background: white;
+  width: 28vw;
+}
+
 p3 {
   font-size: 10px;
 }
@@ -168,4 +184,14 @@ p2 {
 }
 p1 {
   font-size: 15px;
+}
+
+.EquipmentInventory {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+}
+.eqListItem {
+  display:flex;
+  align-content: space-around;
 }

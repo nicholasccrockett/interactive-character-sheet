@@ -7,7 +7,9 @@ class WeaponsList extends React.Component {
 
     this.listItemStyle = {
       fontSize:12,
-      color: "Black"
+      backgroundColor: '#eeeeee',
+      alignSelf: 'space-around',
+      paddingRight:'3vw'
     };
 
     this.listStyle = {
