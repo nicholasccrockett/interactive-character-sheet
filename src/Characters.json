@@ -103,6 +103,15 @@
           "damageType": "slashing"
         },
         {
+          "name": "Longsword",
+          "type": "weapon",
+          "category": "martial",
+          "damageDie": "d8",
+          "twoHandedDamageDie": "d12",
+          "damageDieNum": 1,
+          "damageType": "slashing"
+        },
+        {
           "name": "rope",
           "type": "utility",
           "length": "50ft"
@@ -111,20 +120,20 @@
     },
     {
       "playerName": "Nicholas Crockett",
-      "charName": "Cairne Bloodhoof",
-      "class": "Cleric",
-      "sClass": "",
-      "pcLevel": 3,
-      "scLevel": 0,
-      "background": "Outlander",
-      "personalityTraits": "",
-      "ideals": "",
-      "bonds": "",
-      "flaws": "",
+      "charName": "Kore Stonefoot",
+      "class": "Fighter",
+      "sClass": "Sorcerer",
+      "pcLevel": 11,
+      "scLevel": 2,
+      "background": "Soldier",
+      "personalityTraits": "I can stare down a hellhound.",
+      "ideals": "Life is like the seasons, in constant change, and we must change with it and adapt, while preserving our culture.",
+      "bonds": "Those who fight beside me are worth dying for.",
+      "flaws": "My hate for the enemy is blinding.",
       "race": "Minotaur",
       "alignment": "Lawful Neutral",
       "otherProficiencies": "None, ",
-      "featuresAndTraits": "",
+      "featuresAndTraits": ["Minotaur","other"],
       "languages": "Common, Minotaur and Orcish",
       "experiencePoints": 900,
       "inspiration": 0,
@@ -199,6 +208,15 @@
           "type": "weapon",
           "category": "martial",
           "damageDie": "d6",
+          "damageDieNum": 1,
+          "damageType": "slashing"
+        },
+        {
+          "name": "Longsword",
+          "type": "weapon",
+          "category": "martial",
+          "damageDie": "d8",
+          "twoHandedDamageDie": "d12",
           "damageDieNum": 1,
           "damageType": "slashing"
         },

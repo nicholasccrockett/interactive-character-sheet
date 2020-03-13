@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.handbook = require("./PH.json");
     this.data = require("./Characters.json");
-    this.selected = this.data.Characters[0];
+    this.selected = this.data.Characters[1];
     //set state value based off of incoming character. Assumes the use of the first character.
     this.state = {
       sel:0,

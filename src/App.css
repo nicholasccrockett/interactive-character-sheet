@@ -15,9 +15,13 @@
 }
 .otherMeta {
   display:flex;
-  align-content: space-between;
-  padding:2vw;
-  flex-wrap: wrap;
+  align-content: space-around;
+  width: 60vw;
+  background-color: white;
+}
+
+.otherMeta h3 {
+  padding-left: 2vw;
 }
 
 .page1 {
